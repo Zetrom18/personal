@@ -1,14 +1,162 @@
 {
-	"SEED": {
-		"1": "SEMI_PLAYOFF",
-		"2": "SEMI_PLAYOFF",
-		"3": "PLAYOFF",
-		"4": "PLAYOFF",
-		"5": "PLAYOFF",
-		"6": "PLAYOFF",
-		"7": "None",
-		"8": "None",
-		"9": "None",
-		"10": "None"
+	"COMPETITIONS": {
+		"NALCS": {
+			"TAG": "NALCS",
+			"NAME": "NA LCS",
+			"LONG_NAME": "North American League Championship Series",
+			"SIZE": 10,
+			"GROUP_SIZE": 1,
+			"SEED": {
+				"1": "SEMI_FINALS",
+				"2": "SEMI_FINALS",
+				"3": "QUARTER_FINALS",
+				"4": "QUARTER_FINALS",
+				"5": "QUARTER_FINALS",
+				"6": "QUARTER_FINALS",
+				"7": "None",
+				"8": "None",
+				"9": "None",
+				"10": "None"
+			}
+		},
+		"EULCS": {
+			"TAG": "EULCS",
+			"NAME": "EU LCS",
+			"LONG_NAME": "European League Championship Series",
+			"SIZE": 10,
+			"GROUP_SIZE": 1,
+			"SEED": {
+				"1": "SEMI_FINALS",
+				"2": "SEMI_FINALS",
+				"3": "QUARTER_FINALS",
+				"4": "QUARTER_FINALS",
+				"5": "QUARTER_FINALS",
+				"6": "QUARTER_FINALS",
+				"7": "None",
+				"8": "None",
+				"9": "None",
+				"10": "None"
+			}
+		},
+		"WORLDS": {
+			"TAG": "WORLDS",
+			"NAME": "EU LCS",
+			"LONG_NAME": "World Championship Series",
+			"GROUP_SIZE": 4,
+			"SEED": {
+				"1": "QUARTER_FINALS",
+				"2": "QUARTER_FINALS",
+				"3": "None",
+				"4": "None"
+			},
+			"GROUPS": {
+				"A": {
+					"TAG": "A",
+					"NAME": "Group A",
+					"TEAMS": [
+						"AF",
+						"FW",
+						"G2",
+						"PVB"
+					]
+				},
+				"B": {
+					"TAG": "B",
+					"NAME": "Group B",
+					"TEAMS": [
+						"C9",
+						"VIT",
+						"GEN",
+						"RNG"
+					]
+				},
+				"C": {
+					"TAG": "C",
+					"NAME": "Group C",
+					"TEAMS": [
+						"KT",
+						"TL",
+						"EDG",
+						"MAD"
+					]
+				},
+				"D": {
+					"TAG": "D",
+					"NAME": "Group D",
+					"TEAMS": [
+						"IG",
+						"FNC",
+						"100",
+						"GRX"
+					]
+				}
+			}
+		}
+	},
+	"TEAMS": {
+		"AF": {
+			"TAG": "AF",
+			"NAME": "Afreeca Freecs"
+		},
+		"FW": {
+			"TAG": "FW",
+			"NAME": "Flash Wolves"
+		},
+		"G2": {
+			"TAG": "G2",
+			"NAME": "G2 Esports"
+		},
+		"PVB": {
+			"TAG": "PVB",
+			"NAME": "Phong Vu Buffalo"
+		},
+		"RNG": {
+			"TAG": "RNG",
+			"NAME": "Royal Never Give Up"
+		},
+		"C9": {
+			"TAG": "C9",
+			"NAME": "Cloud9"
+		},
+		"VIT": {
+			"TAG": "VIT",
+			"NAME": "Team Vitality"
+		},
+		"GEN": {
+			"TAG": "GEN",
+			"NAME": "Gen.G"
+		},
+		"KT": {
+			"TAG": "KT",
+			"NAME": "KT Rolster"
+		},
+		"EDG": {
+			"TAG": "EDG",
+			"NAME": "EDward Gaming"
+		},
+		"TL": {
+			"TAG": "TL",
+			"NAME": "Team Liquid"
+		},
+		"MAD": {
+			"TAG": "MAD",
+			"NAME": "MAD Team"
+		},
+		"IG": {
+			"TAG": "IG",
+			"NAME": "Invictus Gaming"
+		},
+		"FNC": {
+			"TAG": "FNC",
+			"NAME": "Fnatic"
+		},
+		"100": {
+			"TAG": "100",
+			"NAME": "100 Thieves"
+		},
+		"GRX": {
+			"TAG": "GRX",
+			"NAME": "G-Rex"
+		}
 	}
 }

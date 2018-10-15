@@ -1,9 +1,17 @@
 import json
+from .models import Competition, Team
 
 with open('initial.json') as f:
-    data = json.load(f)
+	data = json.load(f)
 
+models = []
 
-# settings = json.loads(json.dumps(open("initial.json", "r").read()))
+comp = Competition(**data["COMPETITIONS"]["WORLDS"])
 
-print(data)
+for tag, team in data["TEAMS"].items():
+	print(tag, team)
+	comp.addTeam(Team(**team))
+
+models.append(comp)
+
+print(models)
