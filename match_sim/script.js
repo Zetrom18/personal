@@ -1,4 +1,4 @@
-var teams = [
+var TEAMS = [
 	{
 		"Tag": "FOX",
 		"Team Name": "Echo Fox",
@@ -176,7 +176,13 @@ var teams = [
 			"100": 0,
 		},
 	},
-]
+];
+var WEEKS = 9;
+var DAYS = 2;
+var DAYMATCHES = 5;
+var week = 1;
+var day = 1;
+var results = [];
 
 $(document).ready(function(){
 	init();
@@ -202,9 +208,9 @@ function defeat(winner, loser) {
 }
 
 function getTeam(tag) {
-	for (team in teams) {
-		if (teams[team]["Tag"] === tag) {
-			return teams[team];
+	for (team in TEAMS) {
+		if (TEAMS[team]["Tag"] === tag) {
+			return TEAMS[team];
 		}
 	}
 	return null;
@@ -226,7 +232,7 @@ function createStandingsTable() {
 	var text = document.createTextNode("#");
 	td.appendChild(text);
 	th.appendChild(td);
-	for (tag in teams[0]) {
+	for (tag in TEAMS[0]) {
 		if (tag == "H2H") {
 			continue;
 		}
@@ -238,29 +244,29 @@ function createStandingsTable() {
 	thead.appendChild(th);
 	table.appendChild(thead);
 
+	table.appendChild(document.createElement("tbody"));
+
 	updateStandingsTable();
 }
 
 function updateStandingsTable() {
-	var table = $("#standings-table");
+	var table = $("#standings-table")[0];
 
-	console.log(table)
-
-	var oldBody = table.tbody;
+	var oldBody = table.tBodies[0];
 	var tbody = document.createElement("tbody");
 
-	for (i in teams.sort(compare)) {
+	for (i in TEAMS.sort(compare)) {
 		var row = document.createElement("tr");
 		var td = document.createElement("td");
 		var text = document.createTextNode(i-0+1);
 		td.appendChild(text);
 		row.appendChild(td);
-		for (info in teams[i]) {
+		for (info in TEAMS[i]) {
 			if (info == "H2H") {
 				continue;
 			}
 			var td = document.createElement("td");
-			var text = document.createTextNode(teams[i][info]);
+			var text = document.createTextNode(TEAMS[i][info]);
 			td.appendChild(text);
 			row.appendChild(td);
 		}
@@ -271,92 +277,123 @@ function updateStandingsTable() {
 }
 
 function createMatchesTable() {
+	var tableDiv = document.createElement("div");
+	tableDiv.setAttribute("id", "matches-div");
 
+	for (w = 0; w <= WEEKS - week; w++){
+		var weekDiv = document.createElement("div");
+		weekDiv.setAttribute("id", "week-"+(w+1)+"-div");
+		for (d = 0; d <= DAYS - day; d++){
+			var table = document.createElement("table");
+			table.setAttribute("id", "week-"+(w+1)+"-day-"+(d+1)+"-table");
+
+			var thead = document.createElement("thead");
+			var th = document.createElement("th");
+			["#", "Team 1", "VS", "Team 2"].forEach(function (value, index, array){
+				var td = document.createElement("td");
+				var text = document.createTextNode(value);
+				td.appendChild(text);
+				th.appendChild(td);
+			})
+			thead.appendChild(th);
+			table.appendChild(thead);
+
+			weekDiv.appendChild(table);
+		}
+		tableDiv.appendChild(weekDiv);
+	}
+
+	document.body.appendChild(tableDiv);
+
+//
+//	table.appendChild(document.createElement("tbody"));
+//
+//	updateStandingsTable();
 }
 
 function init() {
-	var results = [
-		{win: "TL", loss: "C9"},
-		{win: "TL", loss: "CLG"},
-		{win: "TL", loss: "100"},
-		{win: "TL", loss: "CG"},
-		{win: "TL", loss: "FLY"},
-		{win: "TL", loss: "OPT"},
-		{win: "TL", loss: "GGS"},
-		{win: "TL", loss: "FOX"},
-		{win: "TL", loss: "100"},
-		{win: "TL", loss: "OPT"},
-		{win: "TL", loss: "CLG"},
-		{win: "TL", loss: "C9"},
-		{win: "TL", loss: "GGS"},
-		{win: "TL", loss: "CG"},
-		{win: "C9", loss: "100"},
-		{win: "C9", loss: "GGS"},
-		{win: "C9", loss: "TSM"},
-		{win: "C9", loss: "CG"},
-		{win: "C9", loss: "FOX"},
-		{win: "C9", loss: "OPT"},
-		{win: "C9", loss: "FLY"},
-		{win: "C9", loss: "CLG"},
-		{win: "C9", loss: "GGS"},
-		{win: "C9", loss: "TSM"},
-		{win: "C9", loss: "100"},
-		{win: "C9", loss: "OPT"},
-		{win: "TSM", loss: "TL"},
-		{win: "TSM", loss: "100"},
-		{win: "TSM", loss: "FOX"},
-		{win: "TSM", loss: "OPT"},
-		{win: "TSM", loss: "CLG"},
-		{win: "TSM", loss: "FLY"},
-		{win: "TSM", loss: "FOX"},
-		{win: "TSM", loss: "100"},
-		{win: "TSM", loss: "OPT"},
-		{win: "TSM", loss: "GGS"},
-		{win: "TSM", loss: "CLG"},
-		{win: "FLY", loss: "TL"},
-		{win: "FLY", loss: "TSM"},
-		{win: "FLY", loss: "GGS"},
-		{win: "FLY", loss: "OPT"},
-		{win: "FLY", loss: "100"},
-		{win: "FLY", loss: "CG"},
-		{win: "FLY", loss: "CG"},
-		{win: "FLY", loss: "FOX"},
-		{win: "FLY", loss: "100"},
-		{win: "GGS", loss: "TSM"},
-		{win: "GGS", loss: "OPT"},
-		{win: "GGS", loss: "CLG"},
-		{win: "GGS", loss: "FOX"},
-		{win: "GGS", loss: "100"},
-		{win: "GGS", loss: "CLG"},
-		{win: "GGS", loss: "CG"},
-		{win: "CLG", loss: "C9"},
-		{win: "CLG", loss: "FLY"},
-		{win: "CLG", loss: "FLY"},
-		{win: "CLG", loss: "FOX"},
-		{win: "CLG", loss: "CG"},
-		{win: "CLG", loss: "OPT"},
-		{win: "FOX", loss: "C9"},
-		{win: "FOX", loss: "FLY"},
-		{win: "FOX", loss: "GGS"},
-		{win: "FOX", loss: "OPT"},
-		{win: "FOX", loss: "100"},
-		{win: "FOX", loss: "100"},
-		{win: "OPT", loss: "FLY"},
-		{win: "OPT", loss: "FOX"},
-		{win: "OPT", loss: "CLG"},
-		{win: "OPT", loss: "CG"},
-		{win: "OPT", loss: "100"},
-		{win: "OPT", loss: "CG"},
-		{win: "CG", loss: "TSM"},
-		{win: "CG", loss: "GGS"},
-		{win: "CG", loss: "CLG"},
-		{win: "CG", loss: "FOX"},
-		{win: "CG", loss: "FOX"},
-		{win: "100", loss: "GGS"},
-		{win: "100", loss: "CLG"},
-		{win: "100", loss: "CG"},
-		{win: "100", loss: "CG"},
-	]
+//	results = [
+//		{win: "TL", loss: "C9"},
+//		{win: "TL", loss: "CLG"},
+//		{win: "TL", loss: "100"},
+//		{win: "TL", loss: "CG"},
+//		{win: "TL", loss: "FLY"},
+//		{win: "TL", loss: "OPT"},
+//		{win: "TL", loss: "GGS"},
+//		{win: "TL", loss: "FOX"},
+//		{win: "TL", loss: "100"},
+//		{win: "TL", loss: "OPT"},
+//		{win: "TL", loss: "CLG"},
+//		{win: "TL", loss: "C9"},
+//		{win: "TL", loss: "GGS"},
+//		{win: "TL", loss: "CG"},
+//		{win: "C9", loss: "100"},
+//		{win: "C9", loss: "GGS"},
+//		{win: "C9", loss: "TSM"},
+//		{win: "C9", loss: "CG"},
+//		{win: "C9", loss: "FOX"},
+//		{win: "C9", loss: "OPT"},
+//		{win: "C9", loss: "FLY"},
+//		{win: "C9", loss: "CLG"},
+//		{win: "C9", loss: "GGS"},
+//		{win: "C9", loss: "TSM"},
+//		{win: "C9", loss: "100"},
+//		{win: "C9", loss: "OPT"},
+//		{win: "TSM", loss: "TL"},
+//		{win: "TSM", loss: "100"},
+//		{win: "TSM", loss: "FOX"},
+//		{win: "TSM", loss: "OPT"},
+//		{win: "TSM", loss: "CLG"},
+//		{win: "TSM", loss: "FLY"},
+//		{win: "TSM", loss: "FOX"},
+//		{win: "TSM", loss: "100"},
+//		{win: "TSM", loss: "OPT"},
+//		{win: "TSM", loss: "GGS"},
+//		{win: "TSM", loss: "CLG"},
+//		{win: "FLY", loss: "TL"},
+//		{win: "FLY", loss: "TSM"},
+//		{win: "FLY", loss: "GGS"},
+//		{win: "FLY", loss: "OPT"},
+//		{win: "FLY", loss: "100"},
+//		{win: "FLY", loss: "CG"},
+//		{win: "FLY", loss: "CG"},
+//		{win: "FLY", loss: "FOX"},
+//		{win: "FLY", loss: "100"},
+//		{win: "GGS", loss: "TSM"},
+//		{win: "GGS", loss: "OPT"},
+//		{win: "GGS", loss: "CLG"},
+//		{win: "GGS", loss: "FOX"},
+//		{win: "GGS", loss: "100"},
+//		{win: "GGS", loss: "CLG"},
+//		{win: "GGS", loss: "CG"},
+//		{win: "CLG", loss: "C9"},
+//		{win: "CLG", loss: "FLY"},
+//		{win: "CLG", loss: "FLY"},
+//		{win: "CLG", loss: "FOX"},
+//		{win: "CLG", loss: "CG"},
+//		{win: "CLG", loss: "OPT"},
+//		{win: "FOX", loss: "C9"},
+//		{win: "FOX", loss: "FLY"},
+//		{win: "FOX", loss: "GGS"},
+//		{win: "FOX", loss: "OPT"},
+//		{win: "FOX", loss: "100"},
+//		{win: "FOX", loss: "100"},
+//		{win: "OPT", loss: "FLY"},
+//		{win: "OPT", loss: "FOX"},
+//		{win: "OPT", loss: "CLG"},
+//		{win: "OPT", loss: "CG"},
+//		{win: "OPT", loss: "100"},
+//		{win: "OPT", loss: "CG"},
+//		{win: "CG", loss: "TSM"},
+//		{win: "CG", loss: "GGS"},
+//		{win: "CG", loss: "CLG"},
+//		{win: "CG", loss: "FOX"},
+//		{win: "CG", loss: "FOX"},
+//		{win: "100", loss: "GGS"},
+//		{win: "100", loss: "CLG"},
+//		{win: "100", loss: "CG"},
+//		{win: "100", loss: "CG"},
+//	];
 
 	for (match in results){
 		defeat(getTeam(results[match].win), getTeam(results[match].loss));
@@ -364,5 +401,4 @@ function init() {
 
 	createStandingsTable();
 	createMatchesTable();
-
 }
