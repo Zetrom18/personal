@@ -1,0 +1,22 @@
+#standings-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#standings-table td, #standings-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#standings-table tr:nth-child(odd){background-color: #f2f2f2;}
+
+#standings-table tr:hover {background-color: #ddd;}
+
+#standings-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
