@@ -1,9 +1,8 @@
 dnd/*.pdf
 virtualenv*
 *.pyc
-*~
-*__pycache__
+*__pycache__*
 *db.sqlite3
-*/static
+*/static*
 *.DS_Store
 
