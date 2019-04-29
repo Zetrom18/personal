@@ -1,6 +1,0 @@
-elf/rougue
-	name: 
-	race: elf
-	class: rougue (maybe fighter)
-	background: urchin
-		Mother killed at labor, father (soldier) died in battle, as an orphan, got enroled in the elven army. Got bored of that life young and fled the comunity, going to a big city. Without support, ended up living in the gutter, destined to die, was saved by a human, who taught him how to live in the streets. The older the human got, more the elf helped him, being on his side until the human died of old age. The elf is forever in debt to this human, but now that he is all alone, he decided to head into a new adventure.
