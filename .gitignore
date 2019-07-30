@@ -1,1 +1,12 @@
+<<<<<<< HEAD
 dnd/*
+=======
+dnd/*.pdf
+virtualenv*
+*.pyc
+*__pycache__*
+*db.sqlite3
+*/static*
+*.DS_Store
+
+>>>>>>> bb033e540511fa4b70cecca4d3f9da018b1e72e9

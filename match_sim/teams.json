@@ -1,0 +1,42 @@
+[
+	{
+		"Tag": "FOX",
+		"Team Name": "Echo Fox"
+	},
+	{
+		"Tag": "OPT",
+		"Team Name": "OpTic Gaming"
+	},
+	{
+		"Tag": "CG",
+		"Team Name": "Clutch Gaming"
+	},
+	{
+		"Tag": "CLG",
+		"Team Name": "Counter Logic Gaming"
+	},
+	{
+		"Tag": "100",
+		"Team Name": "100 Thieves"
+	},
+	{
+		"Tag": "TL",
+		"Team Name": "Team Liquid"
+	},
+	{
+		"Tag": "C9",
+		"Team Name": "Cloud9"
+	},
+	{
+		"Tag": "TSM",
+		"Team Name": "Team SoloMid"
+	},
+	{
+		"Tag": "FLY",
+		"Team Name": "FlyQuest"
+	},
+	{
+		"Tag": "GGS",
+		"Team Name": "Golden Guardians"
+	}
+]

@@ -1,0 +1,146 @@
+{
+	"WEEK1": {
+		"DAY1": {
+			"MATCH1": ["TL", "C9"],
+			"MATCH2": ["100", "TSM"],
+			"MATCH3": ["CLG", "OPT"],
+			"MATCH4": ["FLY", "GGS"],
+			"MATCH5": ["CG", "FOX"]
+		},
+		"DAY2": {
+			"MATCH1": ["OPT", "FLY"],
+			"MATCH2": ["C9", "100"],
+			"MATCH3": ["CLG", "TL"],
+			"MATCH4": ["CG", "TSM"],
+			"MATCH5": ["FOX", "GGS"]
+		}
+	},
+	"WEEK2": {
+		"DAY1": {
+			"MATCH1": ["FOX", "TSM"],
+			"MATCH2": ["C9", "GGS"],
+			"MATCH3": ["100", "TL"],
+			"MATCH4": ["FLY", "CLG"],
+			"MATCH5": ["CG", "OPT"]
+		},
+		"DAY2": {
+			"MATCH1": ["GGS", "100"],
+			"MATCH2": ["OPT", "FOX"],
+			"MATCH3": ["TL", "CG"],
+			"MATCH4": ["TSM", "FLY"],
+			"MATCH5": ["CLG", "C9"]
+		}
+	},
+	"WEEK3": {
+		"DAY1": {
+			"MATCH1": ["100", "CG"],
+			"MATCH2": ["FLY", "TL"],
+			"MATCH3": ["TSM", "C9"],
+			"MATCH4": ["CLG", "FOX"],
+			"MATCH5": ["GGS", "OPT"]
+		},
+		"DAY2": {
+			"MATCH1": ["FOX", "FLY"],
+			"MATCH2": ["CG", "C9"],
+			"MATCH3": ["TL", "OPT"],
+			"MATCH4": ["GGS", "TSM"],
+			"MATCH5": ["100", "CLG"]
+		}
+	},
+	"WEEK4": {
+		"DAY1": {
+			"MATCH1": ["TSM", "OPT"],
+			"MATCH2": ["GGS", "TL"],
+			"MATCH3": ["C9", "FOX"],
+			"MATCH4": ["100", "FLY"],
+			"MATCH5": ["CG", "CLG"]
+		},
+		"DAY2": {
+			"MATCH1": ["FOX", "100"],
+			"MATCH2": ["CLG", "GGS"],
+			"MATCH3": ["TL", "TSM"],
+			"MATCH4": ["FLY", "CG"],
+			"MATCH5": ["OPT", "C9"]
+		}
+	},
+	"WEEK5": {
+		"DAY1": {
+			"MATCH1": ["OPT", "100"],
+			"MATCH2": ["TL", "FOX"],
+			"MATCH3": ["CG", "GGS"],
+			"MATCH4": ["FLY", "C9"],
+			"MATCH5": ["TSM", "CLG"]
+		},
+		"DAY2": {
+			"MATCH1": ["GGS", "FOX"],
+			"MATCH2": ["OPT", "CG"],
+			"MATCH3": ["C9", "CLG"],
+			"MATCH4": ["FLY", "TSM"],
+			"MATCH5": ["TL", "100"]
+		}
+	},
+	"WEEK6": {
+		"DAY1": {
+			"MATCH1": ["CG", "100"],
+			"MATCH2": ["TSM", "FOX"],
+			"MATCH3": ["GGS", "C9"],
+			"MATCH4": ["CLG", "FLY"],
+			"MATCH5": ["OPT", "TL"]
+		},
+		"DAY2": {
+			"MATCH1": ["FOX", "CG"],
+			"MATCH2": ["100", "GGS"],
+			"MATCH3": ["C9", "TSM"],
+			"MATCH4": ["TL", "CLG"],
+			"MATCH5": ["FLY", "OPT"]
+		}
+	},
+	"WEEK7": {
+		"DAY1": {
+			"MATCH1": ["GGS", "CLG"],
+			"MATCH2": ["C9", "TL"],
+			"MATCH3": ["TSM", "100"],
+			"MATCH4": ["CG", "FLY"],
+			"MATCH5": ["FOX", "OPT"]
+		},
+		"DAY2": {
+			"MATCH1": ["TL", "GGS"],
+			"MATCH2": ["FLY", "FOX"],
+			"MATCH3": ["OPT", "TSM"],
+			"MATCH4": ["100", "C9"],
+			"MATCH5": ["CLG", "CG"]
+		}
+	},
+	"WEEK8": {
+		"DAY1": {
+			"MATCH1": ["OPT", "CLG"],
+			"MATCH2": ["CG", "TL"],
+			"MATCH3": ["FOX", "C9"],
+			"MATCH4": ["TSM", "GGS"],
+			"MATCH5": ["FLY", "100"]
+		},
+		"DAY2": {
+			"MATCH1": ["GGS", "CG"],
+			"MATCH2": ["C9", "OPT"],
+			"MATCH3": ["100", "FOX"],
+			"MATCH4": ["TL", "FLY"],
+			"MATCH5": ["CLG", "TSM"]
+		}
+	},
+	"WEEK9": {
+		"DAY1": {
+			"MATCH1": ["OPT", "GGS"],
+			"MATCH2": ["FOX", "TL"],
+			"MATCH3": ["TSM", "CG"],
+			"MATCH4": ["C9", "FLY"],
+			"MATCH5": ["CLG", "100"]
+		},
+		"DAY2": {
+			"MATCH1": ["GGS", "FLY"],
+			"MATCH2": ["FOX", "CLG"],
+			"MATCH3": ["C9", "CG"],
+			"MATCH4": ["TSM", "TL"],
+			"MATCH5": ["100", "OPT"]
+		}
+	}
+}
